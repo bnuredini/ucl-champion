@@ -1,0 +1,48 @@
+.title {
+  text-align: center;
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  margin: 0.5rem;
+  padding: 0.3rem;
+  background-color: rgb(216, 216, 216);
+  border-radius: 0.3rem;
+}
+
+.team-logo {
+  height: 2rem;
+}
+
+.team {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0.2rem;
+}
+
+/* make this more specific */
+input {
+  width: 1.6rem;
+  margin-left: 0.4rem;
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 70%;
+  }
+
+  .game {
+    margin: 1rem;
+    padding: 0.3rem;
+  }
+}
