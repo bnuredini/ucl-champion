@@ -1,6 +1,20 @@
 let inputs = document.querySelectorAll("input");
 let teamTitles = document.querySelectorAll(".team-name");
 let teamLogos = document.querySelectorAll(".team-logo");
+var gameOver = false;
+
+function isGameOver() {
+    return new Promise((resolve, reject) => {
+        console.log("Starting isGameOver()...");
+
+        resolve(() => {
+                    while (!gameOver);
+
+        console.log("isGameOver(): Game is over");
+
+        });
+    });
+}
 
 // set team names for first 16 teams
 for (let i = 0; i < 16; i++) {
@@ -45,7 +59,11 @@ function findWinner(gameIndex) {
   let game = games[gameIndex];
   game.winner = game.team1 - game.team2 > 0 ? game.team1Name : game.team2Name;
 
-  if (gameIndex == 14) return; // last game
+  if (gameIndex == 14) {
+      gameOver = true;
+      console.log("findWinner(): Game is over, gameOver = " + gameOver);
+      return; // last game
+  }
 
   updateTeamName(gameIndex + 16, game.winner);
   updateTeamLogo(gameIndex + 16, game.winner.toLowerCase());
@@ -126,3 +144,7 @@ function getCountry(teamName) {
 
     return "undefined";
 }
+
+isGameOver().then(() => {
+    console.log("Man, the game is really over!");
+});
