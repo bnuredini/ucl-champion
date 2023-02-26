@@ -4,36 +4,24 @@ let teamLogos = document.querySelectorAll(".team-logo");
 
 // set team names for first 16 teams
 for (let i = 0; i < 16; i++) {
-  let j = parseInt(i / 2); // game number
+  let gameIndex = parseInt(i / 2);
+  let teamName = games[gameIndex][i % 2].teamName;
 
-  if (isEven(i)) {
-    teamTitles[i].innerHTML = games[j].team1Name;
-    teamLogos[i].src = "images/" + getCountry(games[j].team1Name.toLowerCase()) + ".png";
-  } else {
-    teamTitles[i].innerHTML = games[j].team2Name;
-    teamLogos[i].src = "images/" + getCountry(games[j].team2Name.toLowerCase()) + ".png";
-  }
+  teamTitles[i].innerHTML = teamName;
+  teamLogos[i].src = "images/" + getCountry(teamName.toLowerCase()) + ".png";
 }
 
 // set up an event listener for every input
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener("input", () => {
-    let j = parseInt(i / 2); // game number
+    let gameIndex = parseInt(i / 2);
+    let currTeamGoals = games[gameIndex][i % 2].teamGoals;
 
-    if (isEven(i)) {
-      // clear input of next round if an update is begin performed
-      if (games[j].team1 != undefined) clearInput(j + 16);
+    if (currTeamGoals != undefined) clearInput(gameIndex + 16);
+    games[gameIndex][i % 2].teamGoals = inputs[i].value;
 
-      // team A
-      games[j].team1 = inputs[i].value;
-      if (games[j].team2 != undefined) findWinner(j);
-    } else {
-      if (games[j].team2 != undefined) clearInput(j + 16);
-
-      // team B
-      games[j].team2 = inputs[i].value;
-      if (games[j].team1 != undefined) findWinner(j);
-    }
+    let opponentsGoals = games[gameIndex][(i + 1) % 2].teamGoals;
+    if (opponentsGoals != undefined) findWinner(gameIndex);
   });
 }
 
@@ -43,16 +31,23 @@ for (let i = 0; i < inputs.length; i++) {
  */
 function findWinner(gameIndex) {
   let game = games[gameIndex];
-  game.winner = game.team1 - game.team2 > 0 ? game.team1Name : game.team2Name;
+  let team0Goals = game[0].teamGoals;
+  let team1Goals = game[1].teamGoals;
+  game[2].winner = team0Goals - team1Goals > 0 ? game[0].teamName : game[1].teamName;
 
   if (gameIndex == 14) return; // last game
 
-  updateTeamName(gameIndex + 16, game.winner);
-  updateTeamLogo(gameIndex + 16, game.winner.toLowerCase());
+  updateTeamName(gameIndex + 16, game[2].winner);
+  updateTeamLogo(gameIndex + 16, game[2].winner.toLowerCase());
   let dist = findDist(8, Math.ceil(gameIndex / 2), -1);
 
-  if (isEven(gameIndex)) games[gameIndex + dist].team1Name = game.winner;
-  else games[gameIndex + dist].team2Name = game.winner;
+  if (isEven(gameIndex)) {
+    games[gameIndex + dist][0].teamName;
+    game[2].winner;
+    games[gameIndex + dist][0].teamName = game[2].winner;
+  } else {
+    games[gameIndex + dist][1].teamName = game[2].winner;
+  }
 }
 
 /**
@@ -99,11 +94,13 @@ function clearInput(teamIndex) {
  * Given a team identifier, returns a string with that teams country name.
  */
 function getCountry(teamName) {
-    if (teamName == "bar" || teamName == "rma" || teamName == "sev" || teamName == "atl") {
+    if (teamName == "bar" || teamName == "rma" || teamName == "sev" || 
+        teamName == "atl") {
         return "spain"; 
     }
 
-    if (teamName == "bay" || teamName == "bvb" || teamName == "bmg") {
+    if (teamName == "bay" || teamName == "bvb" || teamName == "bmg" || 
+        teamName == "rbl" || teamName == "fra") {
         return "germany"; 
     }
 
@@ -116,12 +113,17 @@ function getCountry(teamName) {
     }
 
     if (teamName == "liv" || teamName == "mnc" || teamName == "lei" || 
-        teamName == "che" || teamName == "man") {
+        teamName == "che" || teamName == "man" || teamName == "tot") {
         return "englad"; 
     }
 
-    if (teamName == "juv" || teamName == "laz" || teamName == "int" || teamName == "ata") {
+    if (teamName == "juv" || teamName == "laz" || teamName == "int" || teamName == "ata" ||
+        teamName == "mil" || teamName == "nap") {
         return "italy"; 
+    }
+
+    if (teamName == "bur") {
+        return "belgium"; 
     }
 
     return "undefined";

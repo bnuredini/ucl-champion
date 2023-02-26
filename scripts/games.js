@@ -1,107 +1,197 @@
 let games = [
-  {
-    team1: null,
-    team2: null,
-    team1Name: "LAZ",
-    team2Name: "BAY",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "PSG",
-    team2Name: "BAR",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "BMG",
-    team2Name: "MNC",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "BVB",
-    team2Name: "SEV",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "RMA",
-    team2Name: "ATA",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "LIV",
-    team2Name: "LEI",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "POR",
-    team2Name: "JUV",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "CHE",
-    team2Name: "ATL",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
-  {
-    team1: null,
-    team2: null,
-    team1Name: "A",
-    team2Name: "B",
-    winner: "",
-  },
+  [
+    {
+      goals: null,
+      teamName: "RBL"
+    },
+    {
+      goals: null,
+      teamName: "MAN"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "BUR"
+    },
+    {
+      goals: null,
+      teamName: "BEN"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "LIV"
+    },
+    {
+      goals: null,
+      teamName: "RMA"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "MIL"
+    },
+    {
+      goals: null,
+      teamName: "TOT"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "FRA"
+    },
+    {
+      goals: null,
+      teamName: "NAP"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "BVB"
+    },
+    {
+      goals: null,
+      teamName: "CHE"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "INT"
+    },
+    {
+      goals: null,
+      teamName: "POR"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: "PSG"
+    },
+    {
+      goals: null,
+      teamName: "BAY"
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
+  [
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      goals: null,
+      teamName: ""
+    },
+    {
+      winner: ""
+    }
+  ],
 ];
